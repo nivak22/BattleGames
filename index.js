@@ -106,7 +106,7 @@ const nombresDeJuegos = {
     92: "Metroid Prime",
     93: "FTL: Faster Than Light",
     94: "Diablo II",
-    95: "aper Mario: The Thousand-Year Door",
+    95: "paper Mario: The Thousand-Year Door",
     96: "Transistor",
     97: "Marvel's Spider-Man: Miles Morales",
     98: "Final Fantasy VIII",
@@ -170,7 +170,7 @@ const preguntas = [];
 
 function generarPregunta() {
     const juegoId = Math.floor(Math.random() * Object.keys(nombresDeJuegos).length) + 1; // Número de juego entre 1 y la cantidad de juegos que tengas en el objeto
-    const imagenId = Math.floor(Math.random() * 2) + 1;
+    const imagenId = Math.floor(Math.random() * 6) + 1;
     const imagenURL = `https://guessthe.game/games/${juegoId}/${imagenId}.webp`;
 
     const opciones = [];

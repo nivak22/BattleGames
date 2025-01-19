@@ -182,12 +182,18 @@ salirSalaBtn.addEventListener('click', () => {
 });
 
 
-
+const mensajeCopiado = document.getElementById('mensajeCopiado');
 copiarCodigoBtn.addEventListener('click', () => {
 
     navigator.clipboard.writeText(codigoSalaEspera.textContent);
 
-    alert("Código copiado al portapapeles");
+    // Mostrar el mensaje "Copiado"
+    mensajeCopiado.style.display = 'block';
+        
+    // Esconder el mensaje después de 2 segundos
+    setTimeout(() => {
+        mensajeCopiado.style.display = 'none';
+    }, 2000);
 
 });
 
@@ -460,4 +466,71 @@ respuestasContainer.addEventListener('click', (event) => {
         }
     }
 });
+
+
+
+
+
+//musica del juego
+
+var audio = document.getElementById("musica");
+    var icono = document.getElementById("iconoMusica");
+
+    // Intentar reproducir cuando el usuario interactúe con la página
+    document.addEventListener("click", function playMusicOnce() {
+        audio.play().then(() => {
+            console.log("Música iniciada automáticamente");
+        }).catch(error => {
+            console.log("Reproducción bloqueada por el navegador:", error);
+        });
+
+        // Remover el evento después del primer clic
+        document.removeEventListener("click", playMusicOnce);
+    });
+
+    function toggleMusic() {
+        if (audio.paused) {
+            audio.play();
+            icono.className = "fas fa-volume-up"; // Icono de sonido
+        } else {
+            audio.pause();
+            icono.className = "fas fa-volume-mute"; // Icono de silencio
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

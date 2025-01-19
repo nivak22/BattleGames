@@ -1,8 +1,13 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: white;
+    background-image: url('../images/fondo1.jpg');
+    background-repeat: no-repeat; /* Evita que el fondo se repita */
+    background-size: cover; /* Ajusta el fondo para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen para una mejor visualización */
 }
+
+
 
 .visible {
     display: block;
@@ -28,8 +33,7 @@ body {
 
     height: 100vh;
 
-    background: rgb(46, 134, 192);
-    /* Fondo azul */
+    background-image: 'url(../images/fondo.jpg)';
 
     position: relative;
 
@@ -39,53 +43,6 @@ body {
 
 
 
-#fondo::before {
-    /* Línea blanca vertical */
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 50%;
-
-    width: 10px;
-
-    height: 100%;
-
-    background-color: white;
-
-    transform: translateX(-50%);
-
-    z-index: 1;
-    /* Encima de todo */
-
-}
-
-
-
-#fondo::after {
-    /* Fondo rojo */
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 50%;
-
-    width: 50%;
-
-    height: 100%;
-
-    background-color: red;
-
-    z-index: 0;
-    /* Detrás de todo */
-
-}
 
 
 
@@ -114,24 +71,24 @@ body {
 
 
 #cuadro-blanco {
-
     background-color: white;
-
-    padding: 80px;
-
-    border-radius: 10px;
-
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
-    text-align: center;
-
-    z-index: 2;
-    /* Asegura que el cuadro blanco esté visible */
-
+    padding: 50px;
+    border: 3px solid black;
     position: relative;
-    /* Crea un nuevo contexto de apilamiento */
-
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    box-shadow: -10px 5px 0px black;
+    width: 99%;
+    
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -145,7 +102,7 @@ button {
 
     border-radius: 5px;
 
-    background-color: #4CAF50;
+    background-color: #ff0505;
 
     color: white;
 
@@ -159,7 +116,7 @@ button {
 
 button:hover {
 
-    background-color: #45a049;
+    background-color: #2901dd;
 
 }
 
@@ -170,6 +127,7 @@ button:hover {
     margin-top: 10px;
 
 }
+
 
 
 
@@ -217,17 +175,19 @@ button:hover {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #ffe6e6; 
+    background-color: #ffe6e600; 
 }
 
 
 
 #espera-container {
 
-    background-color: white;
-
+    height: 100vh;
+    background-image: url('../images/esperafondo.jpg');
     border-radius: 15px;
-
+    background-repeat: no-repeat; /* Evita que el fondo se repita */
+    background-size: cover; /* Ajusta el fondo para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen para una mejor visualización */
     padding: 30px;
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -247,7 +207,7 @@ button:hover {
 
     margin-bottom: 20px;
 
-    border-bottom: 1px solid #ddd;
+    
 
     padding-bottom: 10px;
 
@@ -262,32 +222,15 @@ button:hover {
     flex-direction: column;
 
     align-items: center;
+    
 
 }
 
 
 
-#versus-container {
-
-    margin: 20px 0;
-
-    text-align: center;
-
-}
 
 
 
-.vs-text {
-
-    font-size: 3em;
-
-    font-weight: bold;
-
-    color: #888;
-
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-
-}
 
 
 
@@ -298,32 +241,25 @@ button:hover {
     justify-content: space-around;
 
     width: 100%;
-
+    margin-top: 5%;
     gap: 20px;
 
 }
 
 
 
+
 .equipo-tabla {
 
-    width: calc(50% - 10px);
-
-    padding: 20px;
-
-    border-radius: 10px;
-
-    box-sizing: border-box;
-
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    min-height: 200px;
+  background-color: white;
+  padding: 50px;
+  border: 3px solid black;
+  position: relative;
+  text-align: center;
+  font-family: 'Comic Sans MS', sans-serif;
+  box-shadow: -10px 5px 0px black;
+  width: 25%;
+  
 
 }
 
@@ -333,7 +269,7 @@ button:hover {
 
     background-color: #e6f2ff;
 
-    border: 2px solid #3498db;
+    border: 2px solid #000000;
 
     color: #3498db;
 
@@ -345,7 +281,7 @@ button:hover {
 
     background-color: #ffe6e6;
 
-    border: 2px solid #e74c3c;
+    border: 2px solid #000000;
 
     color: #e74c3c;
 
@@ -396,9 +332,9 @@ button:hover {
 
 
 /* Estilos para los botones */
-
+ /* Botones SOLO dentro de #pantallaEspera */
 #pantallaEspera button {
-    /* Botones SOLO dentro de #pantallaEspera */
+   
 
     padding: 10px 20px;
 
@@ -458,25 +394,6 @@ button:hover {
 
 
 
-#pantallaEspera #iniciarJuego,
-#pantallaEspera #salirSala,
-#pantallaEspera #copiarCodigo {
-
-    background-color: #34495e;
-
-}
-
-
-
-#pantallaEspera #iniciarJuego:hover,
-#pantallaEspera #salirSala:hover,
-#pantallaEspera #copiarCodigo:hover {
-
-    background-color: #2c3e50;
-
-}
-
-
 
 #espera-footer {
 
@@ -486,7 +403,7 @@ button:hover {
 
     padding-top: 20px;
 
-    border-top: 1px solid #ddd;
+    
 
 }
 
@@ -710,3 +627,413 @@ button:hover {
     display: none; /* Oculto inicialmente */
 }
 
+
+
+
+
+
+#crearSala, #unirseSala {
+    position: relative;
+    padding: 12px 35px;
+    background: #FFFFFF;
+    font-size: 17px;
+    font-weight: 500;
+    color: #ff0000;
+    border: 3px solid #ff0000;
+    border-radius: 8px;
+    box-shadow: 0 0 0 #fec1958c;
+    transition: all .3s ease-in-out;
+  }
+  
+  #crearSala .star-1, #unirseSala .star-1,
+  #crearSala .star-2, #unirseSala .star-2,
+  #crearSala .star-3, #unirseSala .star-3,
+  #crearSala .star-4, #unirseSala .star-4,
+  #crearSala .star-5, #unirseSala .star-5,
+  #crearSala .star-6, #unirseSala .star-6 {
+    position: absolute;
+    width: auto;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+  }
+  
+  #crearSala .star-1, #unirseSala .star-1 {
+    top: 20%;
+    left: 20%;
+    width: 25px;
+  }
+  
+  #crearSala .star-2, #unirseSala .star-2 {
+    top: 45%;
+    left: 45%;
+    width: 15px;
+  }
+  
+  #crearSala .star-3, #unirseSala .star-3 {
+    top: 40%;
+    left: 40%;
+    width: 5px;
+  }
+  
+  #crearSala .star-4, #unirseSala .star-4 {
+    top: 20%;
+    left: 40%;
+    width: 8px;
+  }
+  
+  #crearSala .star-5, #unirseSala .star-5 {
+    top: 25%;
+    left: 45%;
+    width: 15px;
+  }
+  
+  #crearSala .star-6, #unirseSala .star-6 {
+    top: 5%;
+    left: 50%;
+    width: 5px;
+  }
+  
+  #crearSala:hover, #unirseSala:hover {
+    background: #1f9fd1;
+    color: #FFFFFF;
+    box-shadow: 0 0 25px #000000;
+    border: 3px solid #FFF;
+  }
+  
+  #crearSala:hover .star-1, #unirseSala:hover .star-1 {
+    top: -80%;
+    left: -30%;
+    width: 25px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  #crearSala:hover .star-2, #unirseSala:hover .star-2 {
+    top: -25%;
+    left: 10%;
+    width: 15px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  #crearSala:hover .star-3, #unirseSala:hover .star-3 {
+    top: 55%;
+    left: 25%;
+    width: 5px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  #crearSala:hover .star-4, #unirseSala:hover .star-4 {
+    top: 30%;
+    left: 80%;
+    width: 8px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  #crearSala:hover .star-5, #unirseSala:hover .star-5 {
+    top: 25%;
+    left: 115%;
+    width: 15px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  #crearSala:hover .star-6, #unirseSala:hover .star-6 {
+    top: 5%;
+    left: 60%;
+    width: 5px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  .fil0 {
+    fill: #FFFDEF;
+  }
+  
+
+
+
+  /* Estilos para inputs de crear y unirse a sala*/
+  /* From Uiverse.io by 0xnihilism */ 
+  .brutalist-container {
+    position: relative;
+    width: 100%;
+    font-family: monospace;
+    display: flex; /* Para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  .brutalist-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: 4px solid #000;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Ajuste de la dirección de la sombra */
+    box-shadow: -5px 5px 0 #000, -10px 10px 0 #4a90e2;
+  }
+  
+  
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+  
+  .brutalist-input:focus {
+    animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite,
+      glitch 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+  }
+  
+  .brutalist-input:focus::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: white;
+    z-index: -1;
+  }
+  
+  .brutalist-input:focus::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -2;
+    clip-path: inset(0 100% 0 0);
+    animation: glitch-slice 4s steps(2, end) infinite;
+  }
+  
+  @keyframes glitch-slice {
+    0% {
+      clip-path: inset(0 100% 0 0);
+    }
+    10% {
+      clip-path: inset(0 5% 0 0);
+    }
+    20% {
+      clip-path: inset(0 80% 0 0);
+    }
+    30% {
+      clip-path: inset(0 10% 0 0);
+    }
+    40% {
+      clip-path: inset(0 50% 0 0);
+    }
+    50% {
+      clip-path: inset(0 30% 0 0);
+    }
+    60% {
+      clip-path: inset(0 70% 0 0);
+    }
+    70% {
+      clip-path: inset(0 15% 0 0);
+    }
+    80% {
+      clip-path: inset(0 90% 0 0);
+    }
+    90% {
+      clip-path: inset(0 5% 0 0);
+    }
+    100% {
+      clip-path: inset(0 100% 0 0);
+    }
+  }
+  
+  .brutalist-label {
+    position: absolute;
+    left: -3px;
+    top: -35px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    padding: 5px 10px;
+    transform: rotate(-1deg);
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .brutalist-input:focus + .brutalist-label {
+    transform: rotate(0deg) scale(1.05);
+    background-color: #4a90e2;
+  }
+  
+  .smooth-type {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .smooth-type::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .smooth-type:focus::before {
+    opacity: 1;
+    animation: type-gradient 2s linear infinite;
+  }
+  
+  @keyframes type-gradient {
+    0% {
+      background-position: 300px 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .brutalist-input::placeholder {
+    color: #888;
+    transition: color 0.3s ease;
+  }
+  
+  .brutalist-input:focus::placeholder {
+    color: transparent;
+  }
+  
+  .brutalist-input:focus {
+    animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+  }
+  
+  @keyframes focus-pulse {
+    0%,
+    100% {
+      border-color: #000;
+    }
+    50% {
+      border-color: #4a90e2;
+    }
+  }
+  
+
+
+
+
+
+  
+  #codigoSalaTexto{
+    font-size: 2em;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  #codigoSalaEspera{
+    font-size: 2em;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 10px;
+    
+    margin-right: 40px;
+  }
+
+
+
+
+  
+  /* Estilos para ebotones espera*/
+  #pantallaEspera #iniciarJuego,
+  #pantallaEspera #salirSala,
+  #pantallaEspera #copiarCodigo {
+    background-color: #fff;
+      font-family: "Open Sans", sans-serif;
+      font-size: 20px; /* Tamaño de fuente más grande */
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #000;
+      cursor: pointer;
+      border: 4px solid; /* Borde más grueso */
+      padding: 0.5em 1em; /* Más espacio alrededor del texto */
+      box-shadow: 2px 2px 0px 0px, 
+                  4px 4px 0px 0px, 
+                  6px 6px 0px 0px, 
+                  8px 8px 0px 0px, 
+                  10px 10px 0px 0px; /* Sombra más pronunciada */
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+  }
+  
+  #pantallaEspera #iniciarJuego:active,
+  #pantallaEspera #salirSala:active,
+  #pantallaEspera #copiarCodigo:active {
+      box-shadow: 0px 0px 0px 0px;
+      top: 6px;
+      left: 6px;
+  }
+  
+  @media (min-width: 768px) {
+      #pantallaEspera #iniciarJuego,
+      #pantallaEspera #salirSala,
+      #pantallaEspera #copiarCodigo {
+          padding: 0.75em 1.5em; /* Más grande en pantallas grandes */
+      }
+  }
+  
+
+ /*musica*/
+ #iconoMusica {
+  position: fixed; /* Se mantiene en su lugar al hacer scroll */
+  bottom: 20px;  /* Distancia desde abajo */
+  left: 20px;   /* Distancia desde la izquierda */
+  font-size: 32px;  /* Tamaño más grande */
+  cursor: pointer;  /* Cursor de clic */
+  color: #ffffff;  /* Color blanco */
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  padding: 15px;  /* Espaciado interno */
+  border-radius: 50%; /* Forma circular */
+  transition: 0.3s; /* Suavizar efectos */
+  z-index: 9999;  /* Asegura que esté por encima de otros elementos */
+}
+
+/* Efecto al pasar el mouse */
+#iconoMusica:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}

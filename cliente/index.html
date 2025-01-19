@@ -6,19 +6,32 @@
 
     <title>Battle Buzzer</title>
 
-   
+
 
 </head>
 
 <body>
+    <!-- Cargar FontAwesome desde Cloudflare -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <div id="pantallaPrincipal" >
+    <audio id="musica" loop>
+        <source src="musica/mussicafondo.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Ícono que alterna sonido -->
+    <i id="iconoMusica" class="fas fa-volume-up" onclick="toggleMusic()" style="cursor: pointer; font-size: 24px;"></i>
+
+    
+
+
+
+    <div id="pantallaPrincipal">
+
 
         <div id="fondo">
 
             <div id="logo-container">
 
-                <img src="logo.png" alt="Logo Battle Buzzer" id="logo">
 
             </div>
 
@@ -26,20 +39,193 @@
 
                 <div id="cuadro-blanco">
 
-                    <input type="text" id="nombreUsuario" placeholder="Ingresa tu nombre" required>
 
-                    <span id="errorNombre" style="color: red; display: none;">Debes ingresar un nombre.</span><br><br>
 
-                    <button id="crearSala">Crear Sala</button>
+                    <div class="brutalist-container">
+                        <input id="nombreUsuario" placeholder="Ingresa tu nombre" class="brutalist-input smooth-type"
+                            type="text" />
+                        <label class="brutalist-label">Nickname</label>
+                    </div>
+
+
+                    <br><span id="errorNombre" style="color: red; display: none;">Debes ingresar un
+                        nombre.</span><br><br>
+
+
+                    <button id="crearSala">crear Sala
+                        <div class="star-1">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <g id="Layer_x0020_1">
+                                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                    <path
+                                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        class="fil0"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="star-2">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <g id="Layer_x0020_1">
+                                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                    <path
+                                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        class="fil0"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="star-3">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <g id="Layer_x0020_1">
+                                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                    <path
+                                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        class="fil0"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="star-4">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <g id="Layer_x0020_1">
+                                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                    <path
+                                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        class="fil0"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="star-5">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <g id="Layer_x0020_1">
+                                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                    <path
+                                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        class="fil0"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="star-6">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <g id="Layer_x0020_1">
+                                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                    <path
+                                        d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        class="fil0"></path>
+                                </g>
+                            </svg>
+                        </div>
+                    </button>
+
+
 
                     <div id="o-unirse">
-
+                        <br>
                         <p>o unirse a una sala</p>
 
-                        <input type="text" id="codigoSala" placeholder="Código de sala">
+                        <div class="brutalist-container">
+                            <input id="codigoSala" placeholder="Código de sala" class="brutalist-input smooth-type"
+                                type="text" />
 
-                        <button id="unirseSala">Unirse a Sala</button>
+                        </div>
+                        <br><br><br>
 
+                        <button id="unirseSala">Unirse a Sala
+                            <div class="star-1">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                    version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                    <defs></defs>
+                                    <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                            class="fil0"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="star-2">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                    version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                    <defs></defs>
+                                    <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                            class="fil0"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="star-3">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                    version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                    <defs></defs>
+                                    <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                            class="fil0"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="star-4">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                    version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                    <defs></defs>
+                                    <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                            class="fil0"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="star-5">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                    version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                    <defs></defs>
+                                    <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                            class="fil0"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="star-6">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
+                                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                    version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                    <defs></defs>
+                                    <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                            class="fil0"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </button>
                     </div>
 
                 </div>
@@ -52,7 +238,7 @@
 
 
 
-    <div id="pantallaEspera"  >
+    <div id="pantallaEspera">
 
         <div id="espera-container">
 
@@ -63,22 +249,18 @@
                 <span id="codigoSalaTexto">Código de sala: </span><span id="codigoSalaEspera"></span>
 
                 <button id="copiarCodigo">Copiar</button>
+                <div id="mensajeCopiado"
+                    style="display: none; background-color: #000000; color: white; padding: 5px; border-radius: 3px;">
+                    Copiado
+                </div>
 
             </div>
 
+
+
             <div id="espera-body">
 
-                <div id="logo-salaespera">
 
-                    <img src="logo.png" alt="Logo Battle Buzzer" id="logo">
-
-                </div>
-
-                <div id="versus-container">
-
-                    <span class="vs-text">VS</span>
-
-                </div>
 
                 <div id="equipos-container">
 
@@ -90,6 +272,11 @@
 
                         <button id="unirmeAzul">Unirme</button>
 
+                    </div>
+                    <div id="vs-image">
+
+                        <img src="images/vs.png" alt="Logo Battle Buzzer" id="logo">
+    
                     </div>
 
                     <div class="equipo-tabla rojo">
@@ -120,11 +307,14 @@
 
     <div id="pantallaJuego">
         <div id="juego-header"> <button id="salirJuego">Salir</button> </div>
+        <center>
+            <h2>¿A que juego pertenece esta imagen?</h2>
+        </center>
         <div id="contador-container">
             <h1 id="contador"></h1>
         </div>
         <div id="pregunta-container"></div>
-        <div id="contenedor-principal-juego"> 
+        <div id="contenedor-principal-juego">
             <div class="equipo-juego azul">
                 <h2>Equipo Azul</h2>
                 <span id="puntuacionAzul">0</span>
@@ -137,7 +327,7 @@
                 <ul id="listaRojoJuego"></ul>
             </div>
         </div>
-          <center>  <button id="botonPresionar" disabled>Presionar</button></center>
+        <center> <button id="botonPresionar" disabled>Presionar</button></center>
     </div>
 
     <link rel="stylesheet" href="style.css">
